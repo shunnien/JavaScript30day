@@ -19,6 +19,7 @@ function playSound(e) {
  * @returns
  */
 function removeTransition(e) {
+  //console.log(e.propertyName);
   if (e.propertyName !== "transform") return;
   e.target.classList.remove("playing");
 }
@@ -32,9 +33,7 @@ function removeClass(e) {
   key.classList.remove("playing");
 }
 
-const keys = document.querySelectorAll(".key");
-keys.forEach(key => key.addEventListener("transitionend", removeTransition));
-
-
+// const keys = document.querySelectorAll(".key");
+// keys.forEach(key => key.addEventListener("transitionend", removeTransition));
 window.addEventListener("keydown", playSound);
 window.addEventListener("keyup", removeClass);
