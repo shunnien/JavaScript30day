@@ -41,4 +41,10 @@ body {
   background: black;
   position: absolute;
   top: 50%;
+  /* 調整指針旋轉的中心 */
+  transform-origin: 100%;
+  /* 將指針歸位到12點鐘方向 */
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
