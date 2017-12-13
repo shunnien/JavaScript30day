@@ -1,7 +1,10 @@
 const inputs = document.querySelectorAll(".controls input");
 
 function handleUpdate() {
-  console.log(this);
+  //console.log(this);
+
+  // 利用 dataset 取得單位，取不到時給予空值當作預設值
+  const suffix = this.dataset.sizing || "";
 }
 
 inputs.forEach(input => input.addEventListener("change", handleUpdate));
