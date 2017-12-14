@@ -9,3 +9,5 @@ function handleUpdate() {
 }
 
 inputs.forEach(input => input.addEventListener("change", handleUpdate));
+// 移動 range 馬上顯示濾鏡效果
+inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
