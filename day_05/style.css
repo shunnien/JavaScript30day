@@ -58,6 +58,7 @@ body {
   margin: 0;
   width: 100%;
   transition: transform 0.5s;
+  flex: 1 0 auto;
 }
 
 .panel p {
