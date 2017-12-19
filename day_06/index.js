@@ -11,6 +11,12 @@ fetch(endpoint)
  // 關鍵字框查詢建議訊息 function 
 function displayMatches(){
     console.log("hello");
+    // 先將 cities 全部塞到 suggestions 
+    const html = cities.map(obj => {
+        return `<li><span class="name">${obj.city}, ${obj.state}</span><span class="population">${obj.population}</span></li>`;
+      }).join('');
+    const suggestions = document.querySelector('.suggestions');
+    suggestions.innerHTML = html;
 }
 
 
