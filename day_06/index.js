@@ -32,8 +32,8 @@ function displayMatches() {
         const stateName = obj.state.replace(regex, `<span class="hl">${this.value}</span>`);
 
       return `<li><span class="name">${cityName}, ${stateName}</span><span class="population">${numberWithCommas(obj.population)}</span></li>`;
-    })
-    .join("");
+    }).join("");
+    
   const suggestions = document.querySelector(".suggestions");
   suggestions.innerHTML = html;
 }
