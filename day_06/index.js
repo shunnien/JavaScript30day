@@ -21,7 +21,7 @@ function displayMatches() {
     .map(obj => {
       return `<li><span class="name">${obj.city}, ${
         obj.state
-      }</span><span class="population">${obj.population}</span></li>`;
+      }</span><span class="population">${numberWithCommas(obj.population)}</span></li>`;
     })
     .join("");
   const suggestions = document.querySelector(".suggestions");
