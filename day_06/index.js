@@ -16,7 +16,7 @@ function numberWithCommas(str) {
 // 關鍵字框查詢建議訊息 function
 function displayMatches() {
   //console.log("hello");
-  
+
   const matchArray = cities.filter(place => {
     // here we need to figure out if the city or state matches what was searched
     const regex = new RegExp(this.value, 'gi');
@@ -26,9 +26,12 @@ function displayMatches() {
   // 先將 cities 全部塞到 suggestions
   const html = matchArray
     .map(obj => {
-      return `<li><span class="name">${obj.city}, ${
-        obj.state
-      }</span><span class="population">${numberWithCommas(obj.population)}</span></li>`;
+        // 強調關鍵字
+        const regex = new RegExp(this.value, 'gi');
+        const cityName = obj.city.replace(regex, `<span class="hl">${this.value}</span>`);
+        const stateName = obj.state.replace(regex, `<span class="hl">${this.value}</span>`);
+
+      return `<li><span class="name">${cityName}, ${stateName}</span><span class="population">${numberWithCommas(obj.population)}</span></li>`;
     })
     .join("");
   const suggestions = document.querySelector(".suggestions");
