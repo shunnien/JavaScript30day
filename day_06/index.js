@@ -15,9 +15,16 @@ function numberWithCommas(str) {
 
 // 關鍵字框查詢建議訊息 function
 function displayMatches() {
-  console.log("hello");
+  //console.log("hello");
+  
+  const matchArray = cities.filter(place => {
+    // here we need to figure out if the city or state matches what was searched
+    const regex = new RegExp(this.value, 'gi');
+    return place.city.match(regex) || place.state.match(regex)
+  });
+
   // 先將 cities 全部塞到 suggestions
-  const html = cities
+  const html = matchArray
     .map(obj => {
       return `<li><span class="name">${obj.city}, ${
         obj.state
