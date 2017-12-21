@@ -46,3 +46,7 @@ const newComments = [
 ];
 
 console.table(newComments);
+
+// 另一方式 splice
+comments.splice(findCommentIndex,1);
+console.log(comments);
