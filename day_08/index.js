@@ -19,24 +19,28 @@ ctx.lineWidth = 100;
 
 //
 let isDrawing = false;
-let startPoint = [0, 0];
+let startPointX = 0;
+let startPointY = 0;
 
 function draw(e) {
   //console.log(e);
-  if(isDrawing)
-  {
+  if (isDrawing) {
     ctx.beginPath();
     // start from
-    ctx.moveTo(e.offsetX, e.offsetY);
+    ctx.moveTo(startPointX, startPointY);
     // go to
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
+    [startPointX, startPointY] = [e.offsetX, e.offsetY];
+    //console.log([startPointX, startPointY]);
   }
 }
 
 canvas.addEventListener("mousedown", e => {
   isDrawing = true;
-  startPoint = [e.offsetX, e.offsetY];
+  startPointX = e.offsetX;
+  startPointY = e.offsetY;
+  console.log([startPointX, startPointY]);
 });
 canvas.addEventListener("mousemove", draw);
-canvas.addEventListener("mouseup", () =>isDrawing = false);
+canvas.addEventListener("mouseup", () => (isDrawing = false));
