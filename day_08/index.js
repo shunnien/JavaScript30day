@@ -22,6 +22,7 @@ let isDrawing = false;
 let startPointX = 0;
 let startPointY = 0;
 let hue = 0;
+let direction = true;
 
 function draw(e) {
   //console.log(e);
@@ -41,6 +42,15 @@ function draw(e) {
     hue++;
     if (hue >= 360) {
       hue = 0;
+    }
+    if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+      direction = !direction;
+    }
+
+    if (direction) {
+      ctx.lineWidth++;
+    } else {
+      ctx.lineWidth--;
     }
   }
 }
