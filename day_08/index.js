@@ -21,18 +21,27 @@ ctx.lineWidth = 100;
 let isDrawing = false;
 let startPointX = 0;
 let startPointY = 0;
+let hue = 0;
 
 function draw(e) {
   //console.log(e);
   if (isDrawing) {
+    // 設定畫筆樣式
+    ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+
     ctx.beginPath();
     // start from
     ctx.moveTo(startPointX, startPointY);
     // go to
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
-    [startPointX, startPointY] = [e.offsetX, e.offsetY];
+    startPointX = e.offsetX;
+    startPointY = e.offsetY;
     //console.log([startPointX, startPointY]);
+    hue++;
+    if (hue >= 360) {
+      hue = 0;
+    }
   }
 }
 
@@ -40,7 +49,6 @@ canvas.addEventListener("mousedown", e => {
   isDrawing = true;
   startPointX = e.offsetX;
   startPointY = e.offsetY;
-  console.log([startPointX, startPointY]);
 });
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseup", () => (isDrawing = false));
