@@ -10,26 +10,34 @@ function makeGreen() {
 console.log("Test console!!");
 
 // Interpolated 替換字串
-console.log("Hello I am a %s string!",'💩');
+console.log("Hello I am a %s string!", "💩");
 
 // Styled 替換樣式
-console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue')
+console.log(
+  "%c I am some great text",
+  "font-size:50px; background:red; text-shadow: 10px 10px 0 blue"
+);
 
 console.log("I am a string: %s ", "log"); //log
 console.log("I am a float number: %f ", 1.23); //1.23
-console.log("I am a object: %o ", {name:"allen"}); // {name:"allen"}
+console.log("I am a object: %o ", { name: "allen" }); // {name:"allen"}
 console.log("I am a int number: %d ", 1); //1
 console.log("%c other style", "color: #00fdff; font-size: 2em;");
 
+// 各式不同的訊息類型
 // warning!
-
+console.warn("OH NOOO");
 // Error :|
-
+console.error("OH NOOO");
 // Info
+console.info("OH NOOO");
 
 // Testing
+const p = document.querySelector("p");
+console.assert(p.classList.contains("ouch"), "That is wrong!");
 
-// clearing
+// clearing 清除 console
+console.clear();
 
 // Viewing DOM Elements
 
