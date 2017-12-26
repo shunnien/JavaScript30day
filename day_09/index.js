@@ -15,6 +15,12 @@ console.log("Hello I am a %s string!",'💩');
 // Styled 替換樣式
 console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue')
 
+console.log("I am a string: %s ", "log"); //log
+console.log("I am a float number: %f ", 1.23); //1.23
+console.log("I am a object: %o ", {name:"allen"}); // {name:"allen"}
+console.log("I am a int number: %d ", 1); //1
+console.log("%c other style", "color: #00fdff; font-size: 2em;");
+
 // warning!
 
 // Error :|
