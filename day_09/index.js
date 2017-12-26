@@ -6,11 +6,14 @@ function makeGreen() {
   p.style.fontSize = "50px";
 }
 
-// Regular
+// Regular 基本操作
+console.log("Test console!!");
 
-// Interpolated
+// Interpolated 替換字串
+console.log("Hello I am a %s string!",'💩');
 
-// Styled
+// Styled 替換樣式
+console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue')
 
 // warning!
 
