@@ -45,6 +45,15 @@ console.dir(p);
 console.clear();
 
 // Grouping together
+dogs.forEach(dog => {
+  // 此是分組標題文字
+  console.groupCollapsed(`${dog.name}`);
+  console.log(`This is ${dog.name}`);
+  console.log(`${dog.name} is ${dog.age} years old`);
+  console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+  console.groupEnd();
+  //console.groupEnd(`${dog.name}`); // 文字參數沒有意義，不會顯示
+});
 
 // counting
 
