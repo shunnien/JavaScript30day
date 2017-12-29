@@ -34,12 +34,19 @@ function updateButton() {
 }
 
 /**
- * 添加目前播放的 progress bar 
+ * 添加目前播放的 progress bar
  * 就是播放進度條
  */
 function handleProgress() {
   const percent = video.currentTime / video.duration * 100;
   progressBar.style.flexBasis = `${percent}%`;
+}
+
+/**
+ * 跳轉功能
+ */
+function skip() {
+  video.currentTime += parseFloat(this.dataset.skip);
 }
 
 /* Hook up the event listners */
@@ -49,4 +56,5 @@ video.addEventListener("play", updateButton);
 video.addEventListener("pause", updateButton);
 video.addEventListener("timeupdate", handleProgress);
 
-
+// go back 25s or turn back 10s event handler
+skipButtons.forEach(button => button.addEventListener("click", skip));
