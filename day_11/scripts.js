@@ -15,12 +15,26 @@ const skipButtons = player.querySelectorAll("[data-skip]");
 const ranges = player.querySelectorAll(".player__slider");
 
 /* Build out functions */
+/**
+ * 啟動按鈕功能
+ * 觸發播放或是暫停
+ */
 function togglePlay() {
   const method = video.paused ? "play" : "pause";
   // equal video.method()
   video[method]();
 }
 
+/**
+ * 變換按鈕的顯示圖案
+ * 
+ */
+function updateButton() {
+    toggle.textContent = this.paused ? '►' : '❚❚';;
+  }
+
 /* Hook up the event listners */
 toggle.addEventListener('click', togglePlay);
 video.addEventListener("click", togglePlay);
+video.addEventListener('play', updateButton);
+video.addEventListener('pause', updateButton);
