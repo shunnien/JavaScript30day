@@ -10,7 +10,7 @@ const progressBar = player.querySelector(".progress__filled");
 // play button
 const toggle = player.querySelector(".toggle");
 // go back 25s or turn back 10s
-const skipButtons = player.querySelectorAll("[data-skip]");
+const skipButtons = player.querySelectorAll("button[data-skip]");
 // change volume or change play rate
 const ranges = player.querySelectorAll(".player__slider");
 
@@ -27,14 +27,26 @@ function togglePlay() {
 
 /**
  * 變換按鈕的顯示圖案
- * 
+ *
  */
 function updateButton() {
-    toggle.textContent = this.paused ? '►' : '❚❚';;
-  }
+  toggle.textContent = this.paused ? "►" : "❚❚";
+}
+
+/**
+ * 添加目前播放的 progress bar 
+ * 就是播放進度條
+ */
+function handleProgress() {
+  const percent = video.currentTime / video.duration * 100;
+  progressBar.style.flexBasis = `${percent}%`;
+}
 
 /* Hook up the event listners */
-toggle.addEventListener('click', togglePlay);
+toggle.addEventListener("click", togglePlay);
 video.addEventListener("click", togglePlay);
-video.addEventListener('play', updateButton);
-video.addEventListener('pause', updateButton);
+video.addEventListener("play", updateButton);
+video.addEventListener("pause", updateButton);
+video.addEventListener("timeupdate", handleProgress);
+
+
