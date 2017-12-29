@@ -69,4 +69,9 @@ video.addEventListener("timeupdate", handleProgress);
 skipButtons.forEach(button => button.addEventListener("click", skip));
 
 // change volume or change play rate
-ranges.forEach(range => range.addEventListener("change", handleRangeUpdate));
+ranges.forEach(range => {
+  range.addEventListener("change", handleRangeUpdate);
+  // 滑鼠拉著移動的時候
+  range.addEventListener('mousemove', handleRangeUpdate);
+  range.addEventListener("click", handleRangeUpdate);
+});
