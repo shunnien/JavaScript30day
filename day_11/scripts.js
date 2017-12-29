@@ -86,3 +86,7 @@ ranges.forEach(range => {
   range.addEventListener("mousemove", handleRangeUpdate);
   range.addEventListener("click", handleRangeUpdate);
 });
+
+// 進度條的拉動跳轉功能
+progress.addEventListener("click", scrub);
+progress.addEventListener("mousemove", e => scrub(e));
