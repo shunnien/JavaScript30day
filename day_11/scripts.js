@@ -22,4 +22,5 @@ function togglePlay() {
 }
 
 /* Hook up the event listners */
+toggle.addEventListener('click', togglePlay);
 video.addEventListener("click", togglePlay);
