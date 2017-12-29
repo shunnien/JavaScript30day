@@ -58,6 +58,17 @@ function handleRangeUpdate() {
   video[this.name] = this.value;
 }
 
+/**
+ * 跳轉至目前指定時間
+ * @param {*} e 滑鼠事件
+ */
+function scrub(e) {
+  // 滑鼠在進度條的位置 / 進度條容器的長度 = 進度條的比例
+  // 進度條的比例 * 影片時間長度
+  const scrubTime = e.offsetX / progress.offsetWidth * video.duration;
+  video.currentTime = scrubTime;
+}
+
 /* Hook up the event listners */
 toggle.addEventListener("click", togglePlay);
 video.addEventListener("click", togglePlay);
@@ -72,6 +83,6 @@ skipButtons.forEach(button => button.addEventListener("click", skip));
 ranges.forEach(range => {
   range.addEventListener("change", handleRangeUpdate);
   // 滑鼠拉著移動的時候
-  range.addEventListener('mousemove', handleRangeUpdate);
+  range.addEventListener("mousemove", handleRangeUpdate);
   range.addEventListener("click", handleRangeUpdate);
 });
