@@ -49,6 +49,15 @@ function skip() {
   video.currentTime += parseFloat(this.dataset.skip);
 }
 
+/**
+ * volume and play rate event
+ * 利用 html 的 name 來輸入其屬性與值
+ */
+function handleRangeUpdate() {
+  //console.log(this);
+  video[this.name] = this.value;
+}
+
 /* Hook up the event listners */
 toggle.addEventListener("click", togglePlay);
 video.addEventListener("click", togglePlay);
@@ -58,3 +67,6 @@ video.addEventListener("timeupdate", handleProgress);
 
 // go back 25s or turn back 10s event handler
 skipButtons.forEach(button => button.addEventListener("click", skip));
+
+// change volume or change play rate
+ranges.forEach(range => range.addEventListener("change", handleRangeUpdate));
