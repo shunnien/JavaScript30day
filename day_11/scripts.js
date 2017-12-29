@@ -88,5 +88,9 @@ ranges.forEach(range => {
 });
 
 // 進度條的拉動跳轉功能
+// 標示避免影響到 video 的點擊功能
+let mousedown = false;
 progress.addEventListener("click", scrub);
-progress.addEventListener("mousemove", e => scrub(e));
+progress.addEventListener("mousemove", e => mousedown && scrub(e));
+progress.addEventListener("mousedown", () => (mousedown = true));
+progress.addEventListener("mouseup", () => (mousedown = false));
