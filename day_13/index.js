@@ -21,8 +21,13 @@ function checkSlide(e) {
   // console.count(e);
   //console.log(window.scrollY);
   sliderImages.forEach(sliderImage => {
-    const slideInAt = window.scrollY + window.innerHeight - sliderImage.height/2;
-    console.log(slideInAt);
+    // half way throught the image
+    const slideInAt =
+      window.scrollY + window.innerHeight - sliderImage.height / 2;
+    //console.log(slideInAt);
+
+    // bottom of the image
+    const imageBottom = sliderImage.offsetTop + sliderImage.height;
   });
 }
 
