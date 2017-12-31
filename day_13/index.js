@@ -13,3 +13,6 @@ function debounce(func, wait = 20, immediate = true) {
     if (callNow) func.apply(context, args);
   };
 }
+
+
+const sliderImages = document.querySelectorAll('slide-in');
