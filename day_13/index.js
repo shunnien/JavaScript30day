@@ -14,5 +14,10 @@ function debounce(func, wait = 20, immediate = true) {
   };
 }
 
+const sliderImages = document.querySelectorAll("slide-in");
 
-const sliderImages = document.querySelectorAll('slide-in');
+function checkSlide(e) {
+  console.log(e);
+}
+
+window.addEventListener("scroll", checkSlide);
