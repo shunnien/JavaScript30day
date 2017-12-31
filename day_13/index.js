@@ -20,8 +20,9 @@ function checkSlide(e) {
   // console.log(e);
   // console.count(e);
   //console.log(window.scrollY);
-  sliderImages.forEach(sliderImages => {
-    const slideInAt = window.scrollY + window.innerHeight;
+  sliderImages.forEach(sliderImage => {
+    const slideInAt = window.scrollY + window.innerHeight - sliderImage.height/2;
+    console.log(slideInAt);
   });
 }
 
