@@ -88,3 +88,6 @@ console.clear();
 console.log(wes);
 
 const dev = Object.assign({}, wes);
+
+dev.social.twitter = '@coolman';
+console.log(dev.social,wes.social);
