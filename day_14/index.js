@@ -64,6 +64,7 @@ const person = {
 // and think we make a copy:
 const captain = person;
 captain.number = 99;
+console.log(person);
 
 // how do we take a copy instead?
 
