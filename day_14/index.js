@@ -20,7 +20,8 @@ const team = players;
 console.log(players, team);
 
 // You might think we can just do something like this:
-team[3] = "Lux";
+
+//team[3] = "Lux";
 console.log(players, team);
 
 // however what happens when we update that array?
@@ -33,6 +34,8 @@ console.log(players, team);
 
 // So, how do we fix this? We take a copy instead!
 const team2 = players.slice();
+team2[3] = "Lux";
+console.log(players, team2);
 
 // one way
 
