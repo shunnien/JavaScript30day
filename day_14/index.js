@@ -89,5 +89,9 @@ console.log(wes);
 
 const dev = Object.assign({}, wes);
 
-dev.social.twitter = '@coolman';
-console.log(dev.social,wes.social);
+// dev.social.twitter = "@coolman";
+// console.log(dev.social, wes.social);
+
+const dev2 = JSON.parse(JSON.stringify(wes));
+dev2.social.twitter = "@coolman";
+console.log(dev2.social, wes.social);
