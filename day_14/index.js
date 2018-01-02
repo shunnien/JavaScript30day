@@ -20,7 +20,7 @@ const team = players;
 console.log(players, team);
 
 // You might think we can just do something like this:
-team[3] = 'Lux';
+team[3] = "Lux";
 console.log(players, team);
 
 // however what happens when we update that array?
@@ -32,6 +32,7 @@ console.log(players, team);
 // Why? It's because that is an array reference, not an array copy. They both point to the same array!
 
 // So, how do we fix this? We take a copy instead!
+const team2 = players.slice();
 
 // one way
 
@@ -44,6 +45,10 @@ console.log(players, team);
 // The same thing goes for objects, let's say we have a person object
 
 // with Objects
+const person = {
+  name: "Wes Bos",
+  age: 80
+};
 
 // and think we make a copy:
 
