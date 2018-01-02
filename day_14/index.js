@@ -47,6 +47,10 @@ const team4 = [...players];
 team4[3] = "heeee hawww";
 console.log(team4);
 
+const team5 = Array.from(players);
+team5[3] = "cool";
+console.log(players, team5);
+
 // now when we update it, the original one isn't changed
 
 // The same thing goes for objects, let's say we have a person object
