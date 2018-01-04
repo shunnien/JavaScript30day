@@ -6,7 +6,7 @@ const items = JSON.parse(localStorage.getItem("items")) || [];
 
 /**
  * 事件停止冒泡
- * @param {*} event 
+ * @param {*} event
  */
 function stopPopup(event) {
   if (!event) event = window.event;
@@ -21,47 +21,63 @@ function stopPopup(event) {
 
 /**
  * 將小吃資料新增到 items 中
- * @param {*} e 
+ * @param {*} e
  */
 function addItem(e) {
-  // 事件停止冒泡  
+  // 事件停止冒泡
   stopPopup(e);
 
   // 取得輸入值
-  const text = (this.querySelector('[name=item]')).value;
+  const text = this.querySelector("[name=item]").value;
 
   const item = {
     text,
     done: false
   };
   items.push(item);
-  localStorage.setItem('items', JSON.stringify(items));
+  localStorage.setItem("items", JSON.stringify(items));
 }
 
 /**
  * 將 localStorage 的資料項目呈現到 HTML 上
  * @param {*} plates     array data
- * @param {*} platesList html container 
+ * @param {*} platesList html container
  */
-function populateList(plates = [],platesList){
-  platesList.innerHTML = '';
-  
-  plates.forEach((plate,i) =>{
-    const li = document.createElement('li');
-    const input = document.createElement('input');
-    const label = document.createElement('label');
+function populateList(plates = [], platesList = itemsList) {
+  platesList.innerHTML = "";
 
-    input.setAttribute("type", "checkbox");
-    input.setAttribute("data-index", `${i}`);
-    input.setAttribute("id", `item${i}`);
-    if(plate.done) input.setAttribute("checked");
-    li.appendChild(input);
-    label.setAttribute("for", `item${i}`);
-    label.appendChild(document.createTextNode(plate.text));
-    li.appendChild(label);
-    platesList.appendChild(li);
-  });
+  plates.forEach((plate, i) => populateItem(plate, i, platesList));
+
+  // 範例的解法
+  // platesList.innerHTML = plates.map((plate, i) => {
+  //   return `
+  //     <li>
+  //       <input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''} />
+  //       <label for="item${i}">${plate.text}</label>
+  //     </li>
+  //   `;
+  // }).join('');
 }
 
-addItems.addEventListener('submit', addItem);
-populateList(items,itemsList);
+/**
+ * 將 localStorage 的資料項目呈現到 HTML 上 (單筆)
+ * @param {*} plate 要顯示的項目
+ * @param {*} i index(索引)
+ */
+function populateItem(plate, i, container = itemsList) {
+  const li = document.createElement("li");
+  const input = document.createElement("input");
+  const label = document.createElement("label");
+  input.setAttribute("type", "checkbox");
+  input.setAttribute("data-index", `${i}`);
+  input.setAttribute("id", `item${i}`);
+  if (plate.done) input.setAttribute("checked");
+  li.appendChild(input);
+  label.setAttribute("for", `item${i}`);
+  label.appendChild(document.createTextNode(plate.text));
+  li.appendChild(label);
+  container.appendChild(li);
+}
+
+addItems.addEventListener("submit", addItem);
+populateList(items);
