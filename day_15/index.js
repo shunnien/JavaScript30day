@@ -30,6 +30,12 @@ function addItem(e) {
   // 取得輸入值
   const text = (this.querySelector('[name=item]')).value;
 
+  const item = {
+    text,
+    done: false
+  };
+  items.push(item);
+  localStorage.setItem('items', JSON.stringify(items));
 }
 
 addItems.addEventListener('submit', addItem);
