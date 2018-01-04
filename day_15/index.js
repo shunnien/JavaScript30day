@@ -36,9 +36,9 @@ function addItem(e) {
   };
   items.push(item);
   localStorage.setItem("items", JSON.stringify(items));
-  populateItem(item,items.findIndex(element => element === item));
+  populateItem(item, items.findIndex(element => element === item));
 
-  // 重置 form 
+  // 重置 form
   this.reset();
 }
 
@@ -83,5 +83,15 @@ function populateItem(plate, i, container = itemsList) {
   container.appendChild(li);
 }
 
+/**
+ * Check 選擇
+ * @param {*} e 
+ */
+function toggleDone(e) {
+  // skip this unless it's an input
+  if (!e.target.matches('input')) return;
+}
+
 addItems.addEventListener("submit", addItem);
 populateList(items);
+itemsList.addEventListener('click', toggleDone);
