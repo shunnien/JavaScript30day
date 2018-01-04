@@ -38,4 +38,30 @@ function addItem(e) {
   localStorage.setItem('items', JSON.stringify(items));
 }
 
+/**
+ * 將 localStorage 的資料項目呈現到 HTML 上
+ * @param {*} plates     array data
+ * @param {*} platesList html container 
+ */
+function populateList(plates = [],platesList){
+  platesList.innerHTML = '';
+  
+  plates.forEach((plate,i) =>{
+    const li = document.createElement('li');
+    const input = document.createElement('input');
+    const label = document.createElement('label');
+
+    input.setAttribute("type", "checkbox");
+    input.setAttribute("data-index", `${i}`);
+    input.setAttribute("id", `item${i}`);
+    if(plate.done) input.setAttribute("checked");
+    li.appendChild(input);
+    label.setAttribute("for", `item${i}`);
+    label.appendChild(document.createTextNode(plate.text));
+    li.appendChild(label);
+    platesList.appendChild(li);
+  });
+}
+
 addItems.addEventListener('submit', addItem);
+populateList(items,itemsList);
