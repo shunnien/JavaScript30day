@@ -26,6 +26,10 @@ function stopPopup(event) {
 function addItem(e) {
   // 事件停止冒泡  
   stopPopup(e);
+
+  // 取得輸入值
+  const text = (this.querySelector('[name=item]')).value;
+
 }
 
 addItems.addEventListener('submit', addItem);
