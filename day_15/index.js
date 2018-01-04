@@ -5,12 +5,27 @@ const itemsList = document.querySelector(".plates");
 const items = JSON.parse(localStorage.getItem("items")) || [];
 
 /**
+ * 事件停止冒泡
+ * @param {*} event 
+ */
+function stopPopup(event) {
+  if (!event) event = window.event;
+  event.cancelBubble = true;
+  event.returnValue = false;
+  if (event.stopPropagation) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  return false;
+}
+
+/**
  * 將小吃資料新增到 items 中
  * @param {*} e 
  */
-function addItem(event) {
+function addItem(e) {
   // 事件停止冒泡  
-  e.preventDefault();
+  stopPopup(e);
 }
 
 addItems.addEventListener('submit', addItem);
