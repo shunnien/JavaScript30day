@@ -75,7 +75,7 @@ function populateItem(plate, i, container = itemsList) {
   input.setAttribute("type", "checkbox");
   input.setAttribute("data-index", `${i}`);
   input.setAttribute("id", `item${i}`);
-  if (plate.done) input.setAttribute("checked");
+  if (plate.done) input.setAttribute("checked",'checked');
   li.appendChild(input);
   label.setAttribute("for", `item${i}`);
   label.appendChild(document.createTextNode(plate.text));
