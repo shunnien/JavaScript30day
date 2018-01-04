@@ -36,6 +36,10 @@ function addItem(e) {
   };
   items.push(item);
   localStorage.setItem("items", JSON.stringify(items));
+  populateItem(item,items.findIndex(element => element === item));
+
+  // 重置 form 
+  this.reset();
 }
 
 /**
