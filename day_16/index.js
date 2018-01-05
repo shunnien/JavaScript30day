@@ -15,9 +15,12 @@ function shadow(e) {
   // equal let mouseX = e.offsetX, mouseY = e.offsetY;
   const { offsetX: mouseX, offsetY: mouseY } = e;
   //console.log([mouseX, mouseY]);
-  
 
-  text.style.textShadow = `${mouseX}px ${mouseY}px 0 rgba(0, 0, 0, 1)`;
+  // 移動的位置 100 是固定移動距離
+  const xWalk = mouseX/width * 100;
+  const yWalk = mouseY/height * 100;
+
+  text.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(0, 0, 0, 1)`;
 
 }
 
@@ -37,4 +40,4 @@ function debounce(func, wait = 20, immediate = true) {
   };
 }
 
-hero.addEventListener("mousemove", debounce(shadow));
+hero.addEventListener("mousemove", shadow);
