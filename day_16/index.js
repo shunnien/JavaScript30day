@@ -2,7 +2,7 @@
 const hero = document.querySelector(".hero");
 const text = hero.querySelector("h1");
 // walk 是固定移動距離
-const walk = 100;
+const walk = 200;
 /**
  * 滑鼠移動變動的陰影
  * @param {*} e
