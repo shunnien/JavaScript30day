@@ -9,19 +9,21 @@ const walk = 100;
  */
 function shadow(e) {
   //console.count(e);
-  
+  //console.log(e);
   // 取得 hero 滿版畫面的長與寬
   const { offsetWidth: width, offsetHeight: height } = hero;
   //console.log([width, height]);
 
   // equal let mouseX = e.offsetX, mouseY = e.offsetY;
-  const { offsetX: mouseX, offsetY: mouseY } = e;
+  let { offsetX: mouseX, offsetY: mouseY } = e;
   //console.log([mouseX, mouseY]);
 
   // 當滑鼠移動到文字上的時候
+  // 利用目前滑鼠在文字上的位置 X 加上該文字容器的 offsetLeft
   if(e.target !== this)
   {
-    console.log(e);
+    mouseX += e.target.offsetLeft;
+    mouseY += e.target.offsetTop;
   } 
 
   // 移動的位置
