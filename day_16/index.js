@@ -1,3 +1,4 @@
+// hero 等同滿版畫面
 const hero = document.querySelector(".hero");
 const text = hero.querySelector("h1");
 /**
@@ -9,7 +10,7 @@ function shadow(e) {
   // equal let mouseX = e.offsetX, mouseY = e.offsetY;
   let { offsetX: mouseX, offsetY: mouseY } = e;
   //console.log([mouseX, mouseY]);
-
+  
   text.style.textShadow = `${mouseX}px ${mouseY}px 0 rgba(0, 0, 0, 1)`;
 
 }
