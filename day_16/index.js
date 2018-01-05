@@ -25,12 +25,16 @@ function shadow(e) {
     mouseY += e.target.offsetTop;
   }
 
-  // 移動的位置 
+  // 移動的位置
   // 添加 rount 來四捨五入
   // 扣掉固定距離的一半，讓數值變成負值，往左邊與上邊移動
-  const xWalk = Math.round(mouseX / width * walk - walk/2);
-  const yWalk = Math.round(mouseY / height * walk - walk/2);
-  text.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(0, 0, 0, 1)`;
+  const xWalk = Math.round(mouseX / width * walk - walk / 2);
+  const yWalk = Math.round(mouseY / height * walk - walk / 2);
+  text.style.textShadow = `
+    ${xWalk}px ${yWalk}px 0 rgba(255, 0, 255, 0.5),
+    ${-xWalk}px ${yWalk}px 0 rgba(0,255,255,0.5),
+    ${yWalk}px ${-xWalk}px 0 rgba(0,255,0,0.5),
+    ${-yWalk}px ${xWalk}px 0 rgba(0,0,255,0.5)`;
 }
 
 function debounce(func, wait = 20, immediate = true) {
