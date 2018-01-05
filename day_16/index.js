@@ -27,8 +27,9 @@ function shadow(e) {
 
   // 移動的位置 
   // 添加 rount 來四捨五入
-  const xWalk = Math.round(mouseX / width * walk);
-  const yWalk = Math.round(mouseY / height * walk);
+  // 扣掉固定距離的一半，讓數值變成負值，往左邊與上邊移動
+  const xWalk = Math.round(mouseX / width * walk - walk/2);
+  const yWalk = Math.round(mouseY / height * walk - walk/2);
   text.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(0, 0, 0, 1)`;
 }
 
