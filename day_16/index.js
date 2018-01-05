@@ -19,11 +19,16 @@ function shadow(e) {
   //console.log([mouseX, mouseY]);
 
   // 移動的位置
-  const xWalk = mouseX/width * walk;
-  const yWalk = mouseY/height * walk;
+   let xWalk = 0;
+   let yWalk = 0;
 
-  text.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(0, 0, 0, 1)`;
-
+  // 當滑鼠移動到文字上的時候
+  if(e.target === this)
+  {
+    xWalk = mouseX/width * walk;
+    yWalk = mouseY/height * walk;
+  } 
+  text.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(0, 0, 0, 1)`; 
 }
 
 function debounce(func, wait = 20, immediate = true) {
