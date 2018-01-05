@@ -13,8 +13,9 @@ function shadow(e) {
   //console.log([width, height]);
 
   // equal let mouseX = e.offsetX, mouseY = e.offsetY;
-  let { offsetX: mouseX, offsetY: mouseY } = e;
+  const { offsetX: mouseX, offsetY: mouseY } = e;
   //console.log([mouseX, mouseY]);
+  
 
   text.style.textShadow = `${mouseX}px ${mouseY}px 0 rgba(0, 0, 0, 1)`;
 
