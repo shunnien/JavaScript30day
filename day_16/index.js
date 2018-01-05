@@ -5,7 +5,7 @@ const text = hero.querySelector("h1");
  * @param {*} e
  */
 function shadow(e) {
-  console.count(e);
+  //console.count(e);
   // equal let mouseX = e.offsetX, mouseY = e.offsetY;
   let { offsetX: mouseX, offsetY: mouseY } = e;
   //console.log([mouseX, mouseY]);
@@ -27,4 +27,4 @@ function debounce(func, wait = 20, immediate = true) {
   };
 }
 
-hero.addEventListener("mousemove", shadow);
+hero.addEventListener("mousemove", debounce(shadow));
