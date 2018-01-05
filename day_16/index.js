@@ -1,6 +1,7 @@
 // hero 等同滿版畫面
 const hero = document.querySelector(".hero");
 const text = hero.querySelector("h1");
+// walk 是固定移動距離
 const walk = 100;
 /**
  * 滑鼠移動變動的陰影
@@ -17,7 +18,7 @@ function shadow(e) {
   const { offsetX: mouseX, offsetY: mouseY } = e;
   //console.log([mouseX, mouseY]);
 
-  // 移動的位置 100 是固定移動距離
+  // 移動的位置
   const xWalk = mouseX/width * walk;
   const yWalk = mouseY/height * walk;
 
