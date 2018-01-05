@@ -8,7 +8,6 @@ const walk = 100;
  * @param {*} e
  */
 function shadow(e) {
-    console.log(e);
   //console.count(e);
   
   // 取得 hero 滿版畫面的長與寬
@@ -22,7 +21,7 @@ function shadow(e) {
   // 當滑鼠移動到文字上的時候
   if(e.target !== this)
   {
-    
+    console.log(e);
   } 
 
   // 移動的位置
