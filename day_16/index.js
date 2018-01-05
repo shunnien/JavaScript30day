@@ -7,10 +7,15 @@ const text = hero.querySelector("h1");
  */
 function shadow(e) {
   //console.count(e);
+  
+  // 取得 hero 滿版畫面的長與寬
+  const { offsetWidth: width, offsetHeight: height } = hero;
+  //console.log([width, height]);
+
   // equal let mouseX = e.offsetX, mouseY = e.offsetY;
   let { offsetX: mouseX, offsetY: mouseY } = e;
   //console.log([mouseX, mouseY]);
-  
+
   text.style.textShadow = `${mouseX}px ${mouseY}px 0 rgba(0, 0, 0, 1)`;
 
 }
