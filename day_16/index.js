@@ -8,6 +8,7 @@ const walk = 100;
  * @param {*} e
  */
 function shadow(e) {
+    console.log(e);
   //console.count(e);
   
   // 取得 hero 滿版畫面的長與寬
@@ -18,16 +19,15 @@ function shadow(e) {
   const { offsetX: mouseX, offsetY: mouseY } = e;
   //console.log([mouseX, mouseY]);
 
-  // 移動的位置
-   let xWalk = 0;
-   let yWalk = 0;
-
   // 當滑鼠移動到文字上的時候
-  if(e.target === this)
+  if(e.target !== this)
   {
-    xWalk = mouseX/width * walk;
-    yWalk = mouseY/height * walk;
+    
   } 
+
+  // 移動的位置
+  const xWalk = mouseX/width * walk;
+  const yWalk = mouseY/height * walk;
   text.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(0, 0, 0, 1)`; 
 }
 
