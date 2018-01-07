@@ -1,3 +1,1 @@
-const timeNodes = document.querySelectorAll('[data-time]');
-
-console.log(timeNodes);
+const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
