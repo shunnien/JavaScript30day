@@ -30,6 +30,15 @@ function paintToCanvas() {
   }, 16);
 }
 
+/**
+ * 攝像頭截圖
+ */
+function takePhoto() {
+  // played the sound
+  snap.currentTime = 0;
+  snap.play();
+}
+
 getVideo();
 
 video.addEventListener("canplay", paintToCanvas);
