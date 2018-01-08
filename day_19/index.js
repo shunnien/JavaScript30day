@@ -17,4 +17,19 @@ function getVideo() {
     });
 }
 
+function videoDisplay() {
+  const width = video.videoWidth;
+  const height = video.videoHeight;
+
+  return setInterval(() => {
+    ctx.drawImage(video, 0, 0, width, height);
+    // take the pixels out
+    let pixels = ctx.getImageData(0, 0, width, height);
+    // put them back
+    ctx.putImageData(pixels, 0, 0);
+  }, 16);
+}
+
 getVideo();
+
+video.addEventListener("canplay", videoDisplay);
