@@ -37,6 +37,15 @@ function takePhoto() {
   // played the sound
   snap.currentTime = 0;
   snap.play();
+
+  // take the data out of the canvas
+  const data = canvas.toDataURL('image/jpeg');
+  const link = document.createElement('a');
+  link.href = data;
+  // 設定預設下載檔名
+  link.setAttribute('download', 'handsome');
+  link.innerHTML = `<img src="${data}" alt="Handsome Man" />`;
+  strip.insertBefore(link, strip.firsChild);
 }
 
 getVideo();
