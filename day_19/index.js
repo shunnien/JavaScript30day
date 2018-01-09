@@ -3,6 +3,9 @@ const canvas = document.querySelector(".photo");
 const ctx = canvas.getContext("2d");
 const strip = document.querySelector(".strip");
 const snap = document.querySelector(".snap");
+const ckRedEffect = document.querySelector(".controls [name=redEffect]");
+const ckScreenSplit = document.querySelector(".controls [name=rgbSplit]");
+const ckGreenScreen = document.querySelector(".controls [name=greenScreen]");
 
 /**
  * 啟動 webcam
@@ -38,12 +41,12 @@ function paintToCanvas() {
     //console.log(pixels);
 
     // mess with them
-    //pixels = redEffect(pixels);
+    if (ckRedEffect.checked) pixels = redEffect(pixels);
 
-    pixels = rgbSplit(pixels);
+    if (ckScreenSplit.checked) pixels = rgbSplit(pixels);
     // globalAlpha 透明度
     //ctx.globalAlpha = 0.5;
-    pixels = greenScreen(pixels);
+    if (ckGreenScreen.checked) pixels = greenScreen(pixels);
 
     // 重置分割畫面
     ctx.putImageData(pixels, 0, 0);
