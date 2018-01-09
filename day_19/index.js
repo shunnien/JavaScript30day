@@ -33,7 +33,7 @@ function paintToCanvas() {
 
     // take the pixels out
     let pixels = ctx.getImageData(0, 0, width, height);
-    console.log(pixels);
+    //console.log(pixels);
   }, 16);
 }
 
@@ -54,6 +54,18 @@ function takePhoto() {
   link.innerHTML = `<img src="${data}" alt="Handsome Man" />`;
   // strip.firsChild 永遠為 null 因為 strip 為 const 所以無法得到最新的資料
   strip.insertBefore(link, null);
+}
+/**
+ * 畫面分割
+ * @param {*} pixels 
+ */
+function rgbSplit(pixels) {
+  for (let i = 0; i < pixels.data.length; i += 4) {
+    pixels.data[i - 150] = pixels.data[i + 0]; // RED
+    pixels.data[i + 500] = pixels.data[i + 1]; // GREEN
+    pixels.data[i - 550] = pixels.data[i + 2]; // Blue
+  }
+  return pixels;
 }
 
 getVideo();
