@@ -39,13 +39,14 @@ function takePhoto() {
   snap.play();
 
   // take the data out of the canvas
-  const data = canvas.toDataURL('image/jpeg');
-  const link = document.createElement('a');
+  const data = canvas.toDataURL("image/jpeg");
+  const link = document.createElement("a");
   link.href = data;
   // 設定預設下載檔名
-  link.setAttribute('download', 'handsome');
+  link.setAttribute("download", "handsome");
   link.innerHTML = `<img src="${data}" alt="Handsome Man" />`;
-  strip.insertBefore(link, strip.firsChild);
+  // strip.firsChild 永遠為 null 因為 strip 為 const 所以無法得到最新的資料
+  strip.insertBefore(link, null);
 }
 
 getVideo();
