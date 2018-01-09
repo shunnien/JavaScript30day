@@ -34,6 +34,10 @@ function paintToCanvas() {
     // take the pixels out
     let pixels = ctx.getImageData(0, 0, width, height);
     //console.log(pixels);
+    pixels = rgbSplit(pixels);
+
+    // 重置分割畫面
+    ctx.putImageData(pixels, 0, 0);
   }, 16);
 }
 
