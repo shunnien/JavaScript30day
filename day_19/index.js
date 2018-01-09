@@ -8,8 +8,10 @@ const snap = document.querySelector(".snap");
  * 啟動 webcam
  */
 function getVideo() {
+  // 取得user的視訊裝置
   navigator.mediaDevices
     .getUserMedia({ video: true, audio: false })
+    // 把回傳的 MediaStream 寫進 html 的 video tag 中並播放
     .then(localMediaStream => {
       //console.log(localMediaStream);
       video.src = window.URL.createObjectURL(localMediaStream);
@@ -58,8 +60,9 @@ function takePhoto() {
   // take the data out of the canvas
   const data = canvas.toDataURL("image/jpeg");
   const link = document.createElement("a");
+  // 設置連結位置為轉圖檔後的base64位置
   link.href = data;
-  // 設定預設下載檔名
+  // 設置連結為下載並設定預設下載檔名
   link.setAttribute("download", "handsome");
   link.innerHTML = `<img src="${data}" alt="Handsome Man" />`;
   // strip.firsChild 永遠為 null 因為 strip 為 const 所以無法得到最新的資料
