@@ -34,7 +34,11 @@ function paintToCanvas() {
     // take the pixels out
     let pixels = ctx.getImageData(0, 0, width, height);
     //console.log(pixels);
-    pixels = rgbSplit(pixels);
+
+    // mess with them
+    pixels = redEffect(pixels);
+
+    //pixels = rgbSplit(pixels);
 
     // 重置分割畫面
     ctx.putImageData(pixels, 0, 0);
@@ -59,6 +63,16 @@ function takePhoto() {
   // strip.firsChild 永遠為 null 因為 strip 為 const 所以無法得到最新的資料
   strip.insertBefore(link, null);
 }
+
+function redEffect(pixels) {
+  for(let i = 0; i < pixels.data.length; i+=4) {
+    pixels.data[i + 0] = pixels.data[i + 0] + 200; // RED
+    pixels.data[i + 1] = pixels.data[i + 1] - 50; // GREEN
+    pixels.data[i + 2] = pixels.data[i + 2] * 0.5; // Blue
+  }
+  return pixels;
+}
+
 /**
  * 畫面分割
  * @param {*} pixels 
