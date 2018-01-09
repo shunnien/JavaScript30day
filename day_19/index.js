@@ -64,6 +64,10 @@ function takePhoto() {
   strip.insertBefore(link, null);
 }
 
+/**
+ * 紅色濾鏡效果
+ * @param {*} pixels 
+ */
 function redEffect(pixels) {
   for(let i = 0; i < pixels.data.length; i+=4) {
     pixels.data[i + 0] = pixels.data[i + 0] + 200; // RED
