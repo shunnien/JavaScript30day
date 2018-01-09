@@ -39,6 +39,8 @@ function paintToCanvas() {
     pixels = redEffect(pixels);
 
     //pixels = rgbSplit(pixels);
+    // globalAlpha 透明度
+    //ctx.globalAlpha = 0.5;
 
     // 重置分割畫面
     ctx.putImageData(pixels, 0, 0);
