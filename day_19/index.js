@@ -38,11 +38,12 @@ function paintToCanvas() {
     //console.log(pixels);
 
     // mess with them
-    pixels = redEffect(pixels);
+    //pixels = redEffect(pixels);
 
-    //pixels = rgbSplit(pixels);
+    pixels = rgbSplit(pixels);
     // globalAlpha 透明度
     //ctx.globalAlpha = 0.5;
+    pixels = greenScreen(pixels);
 
     // 重置分割畫面
     ctx.putImageData(pixels, 0, 0);
@@ -71,10 +72,10 @@ function takePhoto() {
 
 /**
  * 紅色濾鏡效果
- * @param {*} pixels 
+ * @param {*} pixels
  */
 function redEffect(pixels) {
-  for(let i = 0; i < pixels.data.length; i+=4) {
+  for (let i = 0; i < pixels.data.length; i += 4) {
     pixels.data[i + 0] = pixels.data[i + 0] + 200; // RED
     pixels.data[i + 1] = pixels.data[i + 1] - 50; // GREEN
     pixels.data[i + 2] = pixels.data[i + 2] * 0.5; // Blue
@@ -84,7 +85,7 @@ function redEffect(pixels) {
 
 /**
  * 畫面分割
- * @param {*} pixels 
+ * @param {*} pixels
  */
 function rgbSplit(pixels) {
   for (let i = 0; i < pixels.data.length; i += 4) {
@@ -92,6 +93,35 @@ function rgbSplit(pixels) {
     pixels.data[i + 500] = pixels.data[i + 1]; // GREEN
     pixels.data[i - 550] = pixels.data[i + 2]; // Blue
   }
+  return pixels;
+}
+
+function greenScreen(pixels) {
+  const levels = {};
+
+  document.querySelectorAll(".rgb input").forEach(input => {
+    levels[input.name] = input.value;
+  });
+
+  for (i = 0; i < pixels.data.length; i = i + 4) {
+    red = pixels.data[i + 0];
+    green = pixels.data[i + 1];
+    blue = pixels.data[i + 2];
+    alpha = pixels.data[i + 3];
+
+    if (
+      red >= levels.rmin &&
+      green >= levels.gmin &&
+      blue >= levels.bmin &&
+      red <= levels.rmax &&
+      green <= levels.gmax &&
+      blue <= levels.bmax
+    ) {
+      // take it out!
+      pixels.data[i + 3] = 0;
+    }
+  }
+
   return pixels;
 }
 
