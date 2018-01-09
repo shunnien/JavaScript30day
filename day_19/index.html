@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Get User Media Code Along!</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <div class="photobooth">
     <div class="controls">
       <button onClick="takePhoto()">Take Photo</button>
+      <label for="redEffect">紅色濾鏡</label>
+      <input type="checkbox" name="redEffect" />
+      <label for="greenScreen">綠幕</label>
+      <input type="checkbox" name="greenScreen" />
+      <label for="rgbSplit">畫面分割</label>
+      <input type="checkbox" name="rgbSplit" />
       <div class="rgb">
         <label for="rmin">Red Min:</label>
         <input type="range" min=0 max=255 name="rmin">
@@ -42,4 +50,5 @@
   <script src="index.js"></script>
 
 </body>
+
 </html>
