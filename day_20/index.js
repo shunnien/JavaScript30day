@@ -6,3 +6,6 @@ const recognition = new SpeechRecognition();
 
 // 讓語音識別回傳識別後的資訊（預設為false)
 recognition.interimResults = true;
+
+// 建立元素 p ，等下識別後的文字將塞入
+let p = document.createElement("p");
