@@ -9,3 +9,6 @@ recognition.interimResults = true;
 
 // 建立元素 p ，等下識別後的文字將塞入
 let p = document.createElement("p");
+
+const words = document.querySelector('.words');
+words.appendChild(p);
