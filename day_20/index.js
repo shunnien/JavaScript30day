@@ -23,6 +23,10 @@ recognition.addEventListener('end', recognition.start);
 
 // 識別產生結果
 recognition.addEventListener('result', e => {
-  // 識別結果
-  console.log(e.results);
+  // 識別結果為 SpeechRecognitionResultList 取得 transcript 屬性，就是辨識文字
+  // console.log(e.results);
+  const transcript = Array.from(e.results)
+      .map(result => result[0])
+      .map(result => result.transcript)
+      .join('');
 });
