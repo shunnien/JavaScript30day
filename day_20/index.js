@@ -15,7 +15,8 @@ const words = document.querySelector('.words');
 // 將 p 塞入 .words DOM
 words.appendChild(p);
 
-
-
 // 開始識別
 recognition.start();
+
+// 當識別結束，重複開始識別
+recognition.addEventListener('end', recognition.start);
