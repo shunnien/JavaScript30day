@@ -20,3 +20,6 @@ recognition.start();
 
 // 當識別結束，重複開始識別
 recognition.addEventListener('end', recognition.start);
+
+// 識別產生結果
+recognition.addEventListener('result', e => {});
