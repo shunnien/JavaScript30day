@@ -32,7 +32,11 @@ recognition.addEventListener("result", e => {
     .join("");
 
     // 輸出辨識文字內容
-    p.textContent = transcript;
+    // p.textContent = transcript;
+
+    // 特殊內容使用符號文字取代
+    const poopScript = transcript.replace(/poop|poo|shit|dump/gi, '💩');
+    p.textContent = poopScript;
 
   // 確認辨識結束，就產生新的 p 元素
   if (e.results[0].isFinal) {
