@@ -22,4 +22,7 @@ recognition.start();
 recognition.addEventListener('end', recognition.start);
 
 // 識別產生結果
-recognition.addEventListener('result', e => {});
+recognition.addEventListener('result', e => {
+  // 識別結果
+  console.log(e.results);
+});
