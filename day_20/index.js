@@ -10,5 +10,12 @@ recognition.interimResults = true;
 // 建立元素 p ，等下識別後的文字將塞入
 let p = document.createElement("p");
 
+// 取得 .words 
 const words = document.querySelector('.words');
+// 將 p 塞入 .words DOM
 words.appendChild(p);
+
+
+
+// 開始識別
+recognition.start();
