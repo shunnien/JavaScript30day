@@ -27,7 +27,16 @@ function setVoice() {
   toggle();
 }
 
+// 設定播放速度、文字、聲道
+function setOption() {
+  console.log(this.name, this.value);
+  msg[this.name] = this.value;
+}
+
 speechSynthesis.addEventListener("voiceschanged", populateVoices);
 
 // 語音下拉選單變更
 voicesDropdown.addEventListener("change", setVoice);
+
+// 播放速度、文字、聲道
+options.forEach(option => option.addEventListener("change", setOption));
