@@ -20,8 +20,9 @@ function highlightLink() {
   highlight.style.width = `${domRect.width}px`;
   // 設定 highlight 高度等於目前元素高度
   highlight.style.height = `${domRect.height}px`;
-  // 移動 highlight 元素到目前元素位置
-  highlight.style.transform = `translate(${domRect.left}px, ${domRect.top}px)`;
+  // 移動 highlight 元素到目前元素位置，考量因為有 scroll bar
+  highlight.style.transform = `translate(${domRect.left +
+    window.scrollX}px, ${domRect.top + window.scrollY}px)`;
   //console.log([window.scrollX,window.scrollY]);
 }
 
