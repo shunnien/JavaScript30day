@@ -8,3 +8,10 @@ const highlight = document.createElement("span");
 highlight.classList.add("highlight");
 // 加入到 body
 document.body.appendChild(highlight);
+
+// create function highlight link
+function highlightLink(params) {
+    
+}
+
+
