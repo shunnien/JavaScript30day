@@ -33,6 +33,14 @@ function setOption() {
   msg[this.name] = this.value;
 }
 
+// 播放與停止
+function toggle(startOver = true) {
+  speechSynthesis.cancel();
+  if (startOver) {
+    speechSynthesis.speak(msg);
+  }
+}
+
 speechSynthesis.addEventListener("voiceschanged", populateVoices);
 
 // 語音下拉選單變更
@@ -40,3 +48,6 @@ voicesDropdown.addEventListener("change", setVoice);
 
 // 播放速度、文字、聲道
 options.forEach(option => option.addEventListener("change", setOption));
+
+// 播放
+speakButton.addEventListener("click", toggle);
