@@ -15,6 +15,9 @@ function highlightLink() {
     // 取得元素的大小與位置
     const domRect = this.getBoundingClientRect();
     console.dir(domRect);
+
+    // 設定 highlight 寬度等於目前元素寬度
+    highlight.style.width = domRect.width;
 }
 
 // 對所有超連結綁定事件
