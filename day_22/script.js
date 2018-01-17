@@ -4,3 +4,6 @@ const triggers = document.querySelectorAll("a");
 
 //建立 highlight 元素
 const highlight = document.createElement("span");
+// 設定 CSS 
+highlight.classList.add("highlight");
+
