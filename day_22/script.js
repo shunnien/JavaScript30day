@@ -6,4 +6,5 @@ const triggers = document.querySelectorAll("a");
 const highlight = document.createElement("span");
 // 設定 CSS 
 highlight.classList.add("highlight");
-
+// 加入到 body
+document.body.appendChild(highlight);
