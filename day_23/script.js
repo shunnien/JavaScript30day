@@ -21,4 +21,13 @@ function populateVoices() {
     .join("");
 }
 
+// 設定語音
+function setVoice() {
+  msg.voice = voices.find(voice => voice.name === this.value);
+  toggle();
+}
+
 speechSynthesis.addEventListener("voiceschanged", populateVoices);
+
+// 語音下拉選單變更
+voicesDropdown.addEventListener("change", setVoice);
