@@ -1,4 +1,5 @@
-// 👀👀👀👀👀👀👀👀👀👀👀👀👀👀👀
+// 👀👀👀👀👀👀👀👀👀👀👀👀👀👀👀 💛 
+
 // 取得所有超連結
 const triggers = document.querySelectorAll("a");
 
@@ -9,9 +10,11 @@ highlight.classList.add("highlight");
 // 加入到 body
 document.body.appendChild(highlight);
 
-// create function highlight link
-function highlightLink(params) {
-
+// create function highlight link 
+function highlightLink() {
+    // 取得元素的大小與位置
+    const domRect = this.getBoundingClientRect();
+    console.dir(domRect);
 }
 
 // 對所有超連結綁定事件
