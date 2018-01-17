@@ -17,9 +17,9 @@ function highlightLink() {
     console.dir(domRect);
 
     // 設定 highlight 寬度等於目前元素寬度
-    highlight.style.width = domRect.width;
+    highlight.style.width = `${domRect.width}px`;
     // 設定 highlight 高度等於目前元素高度
-    highlight.style.height = domRect.height;
+    highlight.style.height = `${domRect.height}px`;
 }
 
 // 對所有超連結綁定事件
