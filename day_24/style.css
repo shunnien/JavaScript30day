@@ -25,6 +25,11 @@ body {
   transition: transform 0.5s;
 }
 
+/* 內容與標題比例調整為與本大小 */
+body.fixed-nav .site-wrap {
+  transform: scale(1);
+}
+
 header {
   text-align: center;
   height: 50vh;
