@@ -89,6 +89,11 @@ li.logo a {
   color: black;
 }
 
+/* 顯示標題 logo */
+.fixed-nav li.logo {
+  max-width:500px;
+}
+
 nav a {
   text-decoration: none;
   padding: 20px;
