@@ -25,7 +25,7 @@ body {
   transition: transform 0.5s;
 }
 
-/* 內容與標題比例調整為與本大小 */
+/* 內容比例調整為原本文字大小 */
 body.fixed-nav .site-wrap {
   transform: scale(1);
 }
