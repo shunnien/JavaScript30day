@@ -53,4 +53,11 @@ options.forEach(option => option.addEventListener("change", setOption));
 speakButton.addEventListener("click", toggle);
 
 // 停止播放
+// method 1
 stopButton.addEventListener("click", () => toggle(false));
+// // method 2
+// stopButton.addEventListener("click", toggle.bind(null,false));
+// // method 3
+// stopButton.addEventListener("click", function () {
+//   toggle(false);
+// });
