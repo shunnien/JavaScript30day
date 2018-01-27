@@ -20,3 +20,10 @@ divs.forEach(div => div.addEventListener("click", logText,{
     capture: false,
     once: true
 }));
+
+// 使用 button 觀察 console 次數
+button.addEventListener('click', () => {
+    console.log('Click!!!');
+  }, {
+    once: true
+});
