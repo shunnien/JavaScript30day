@@ -7,6 +7,7 @@ const divs = document.querySelectorAll("div");
  */
 function logText(e) {
   console.log(this.classList.value);
+  // 停止冒泡
   e.stopPropagation(); // stop bubbling!
   //console.log(this); // 顯示 DOM 
 }
@@ -14,7 +15,7 @@ function logText(e) {
 // body 的順序在最外層
 //document.body.addEventListener('click',logText);
 
-// 變更為捕獲
+
 divs.forEach(div => div.addEventListener("click", logText,{
-    capture: true
+    capture: false
 }));
