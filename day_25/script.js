@@ -10,4 +10,7 @@ function logText(e) {
   //console.log(this); // 顯示 DOM 
 }
 
+// body 的順序在最外層
+document.body.addEventListener('click',logText);
+
 divs.forEach(div => div.addEventListener("click", logText));
