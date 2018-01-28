@@ -1,0 +1,1 @@
+const triggers = document.querySelectorAll('.cool > li');
