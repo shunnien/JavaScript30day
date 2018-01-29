@@ -17,8 +17,12 @@ function handleEnter() {
     // 設定指向框大小為下拉選單大小
     background.style.width = `${dropCoords.width}px`;
     background.style.height = `${dropCoords.height}px`;
+    // 使用 setProperty
     // background.style.setProperty('width', `${dropCoords.width}px`);
     // background.style.setProperty('height', `${dropCoords.height}px`);
+
+    // 移動指向框
+    background.style.transform = `translate(${dropCoords.left}px,${dropCoords.top}px)`;
 }
 
 /**
