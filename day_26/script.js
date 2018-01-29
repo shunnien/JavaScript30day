@@ -13,6 +13,10 @@ function handleEnter() {
     const dropdown = this.querySelector('.dropdown');
     // 取得位置資料
     const dropCoords = dropdown.getBoundingClientRect();
+
+    // 設定指向框大小為下拉選單大小
+    background.style.width = `${dropCoords.width}px`;
+    background.style.height = `${dropCoords.height}px`;
 }
 
 /**
