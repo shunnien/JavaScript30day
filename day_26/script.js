@@ -8,6 +8,10 @@ const background = document.querySelector('.dropdownBackground');
 function handleEnter() {
     this.classList.add('trigger-enter','trigger-enter-active');
     background.classList.add('open');
+
+    // 取得下拉選單內容 DOM
+    const dropdown = this.querySelector('.dropdown');
+
 }
 
 /**
