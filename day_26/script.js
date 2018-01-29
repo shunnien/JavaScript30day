@@ -8,7 +8,7 @@ const backgroundCoords = background.getBoundingClientRect();
  * 移動到元素上的觸發事件
  */
 function handleEnter() {
-    this.classList.add('trigger-enter','trigger-enter-active');
+    this.classList.add('trigger-enter');
     background.classList.add('open');
 
     // 取得下拉選單內容 DOM
@@ -27,6 +27,8 @@ function handleEnter() {
     background.style.transform = `translate(${dropCoords.left - backgroundCoords.left}px,${dropCoords.top - backgroundCoords.top}px)`;
     // 使用 setProperty
     // background.style.setProperty('transform', `translate(${dropCoords.left - backgroundCoords.left}px,${dropCoords.top - backgroundCoords.top}px)`);
+    // 調整內容最後顯示
+    this.classList.add('trigger-enter-active');
 }
 
 /**
