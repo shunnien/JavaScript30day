@@ -14,7 +14,8 @@ function handleEnter() {
  * 離開元素的觸發事件
  */
 function handleLeave() {
-    
+    this.classList.remove('trigger-enter','trigger-enter-active');
+    background.classList.remove('open');
 }
 
 // 移動到元素上的觸發事件
