@@ -1,6 +1,8 @@
 const triggers = document.querySelectorAll('.cool > li');
 // arrow container
 const background = document.querySelector('.dropdownBackground');
+// 取得指向框的位置
+const backgroundCoords = background.getBoundingClientRect();
 
 /**
  * 移動到元素上的觸發事件
@@ -22,7 +24,9 @@ function handleEnter() {
     // background.style.setProperty('height', `${dropCoords.height}px`);
 
     // 移動指向框
-    background.style.transform = `translate(${dropCoords.left}px,${dropCoords.top}px)`;
+    background.style.transform = `translate(${dropCoords.left - backgroundCoords.left}px,${dropCoords.top - backgroundCoords.top}px)`;
+    // 使用 setProperty
+    // background.style.setProperty('transform', `translate(${dropCoords.left - backgroundCoords.left}px,${dropCoords.top - backgroundCoords.top}px)`);
 }
 
 /**
