@@ -11,7 +11,8 @@ function handleEnter() {
 
     // 取得下拉選單內容 DOM
     const dropdown = this.querySelector('.dropdown');
-
+    // 取得位置資料
+    const dropCoords = dropdown.getBoundingClientRect();
 }
 
 /**
