@@ -26,11 +26,10 @@ function handleMouseDown(e) {
  * @param {*} e window.event
  */
 function handleMove(e) {
+  // 判斷滑鼠左鍵點選，未點選直接返回停止
+  if (e.buttons !== 1) return;
   // 停止冒泡
   e.stopPropagation();
-  // 判斷滑鼠左鍵點選
-  if (e.buttons === 1) {
-  }
 }
 
 // 滑鼠按鍵按下
