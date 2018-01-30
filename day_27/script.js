@@ -15,3 +15,10 @@ slider.addEventListener("mousedown", () => {
 slider.addEventListener("mouseup", () => {
   slider.classList.remove("active");
 });
+
+/**
+ * 滑鼠離開元素
+ */
+slider.addEventListener("mouseleave", () => {
+    slider.classList.remove("active");
+  });
