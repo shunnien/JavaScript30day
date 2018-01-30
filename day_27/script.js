@@ -30,8 +30,8 @@ function handleMouseDown(e) {
 function handleMove(e) {
   // 判斷滑鼠左鍵點選，未點選直接返回停止
   if (e.buttons !== 1) return;
-  // 停止冒泡
-  e.stopPropagation();
+  // 取消回應
+  e.preventDefault();
   const walk = e.pageX - slider.offsetLeft - startX;
   slider.scrollLeft = scrollLeft - walk;
 }
