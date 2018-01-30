@@ -6,6 +6,11 @@ const slider = document.querySelector(".items");
  * @param {*} e window.event
  */
 function handleMove(e) {
+  // 停止冒泡
+  e.stopPropagation();
+  // 判斷滑鼠左鍵點選
+  if (e.buttons === 1) {
+  }
 }
 
 /**
