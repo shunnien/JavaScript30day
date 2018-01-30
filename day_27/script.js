@@ -1,6 +1,8 @@
 // 取得最外層的 div items
 const slider = document.querySelector(".items");
 
+// 紀錄滑鼠點擊的起始位置
+let startX;
 /**
  * 移動事件
  * @param {*} e window.event
