@@ -19,7 +19,7 @@ function handleRemoveActive() {
 function handleMouseDown(e) {
   slider.classList.add("active");
   // 設定起始位置
-  startX = e.pageX - slider.scrollLeft;
+  startX = e.pageX - slider.offsetLeft;
   scrollLeft = slider.scrollLeft;
 }
 
@@ -30,8 +30,8 @@ function handleMouseDown(e) {
 function handleMove(e) {
   // 判斷滑鼠左鍵點選，未點選直接返回停止
   if (e.buttons !== 1) return;
-  // 取消回應
-  e.preventDefault();
+  // 停止冒泡
+  e.stopPropagation();
   const walk = e.pageX - slider.offsetLeft - startX;
   slider.scrollLeft = scrollLeft - walk;
 }
