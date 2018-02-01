@@ -19,7 +19,7 @@ function handleMove(e) {
   // 速度條的樣式
   bar.style.height = `${Math.round(mousePercent * 100)}%`;
   // 速度條的內容文字更新
-  bar.textContent = `${playSpeed}X`;
+  bar.textContent = `${playSpeed.toFixed(2)}X`;
 }
 
 speed.addEventListener("mousemove", handleMove);
