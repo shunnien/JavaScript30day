@@ -8,12 +8,13 @@ const bar = speed.querySelector(".speed-bar");
  * @param {*} e window.event
  */
 function handleMove(e) {
-    // 取得滑鼠在速度條上的位置
-    const mousePoint = e.pageY - this.offsetTop;
-    // 計算移動的速度條百分比
-    const mousePercent = mousePoint / this.offsetHeight;
-    
+  // 取得滑鼠在速度條上的位置
+  const mousePoint = e.pageY - this.offsetTop;
+  // 計算移動的速度條百分比
+  const mousePercent = mousePoint / this.offsetHeight;
 
+  // 速度條的樣式
+  bar.style.height = `${mousePercent * 100}%`;
 }
 
-speed.addEventListener('mousemove', handleMove);
+speed.addEventListener("mousemove", handleMove);
