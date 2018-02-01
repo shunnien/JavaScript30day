@@ -2,7 +2,8 @@
 const speed = document.querySelector(".speed");
 // 取得 speed bar div
 const bar = speed.querySelector(".speed-bar");
-
+// 取得播放器 DOM
+const video = document.querySelector("video");
 /**
  * 速度條上滑鼠移動
  * @param {*} e window.event
