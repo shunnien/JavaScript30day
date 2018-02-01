@@ -18,6 +18,8 @@ function handleMove(e) {
   const playSpeed = mousePercent * (max - min) + min;
   // 速度條的樣式
   bar.style.height = `${Math.round(mousePercent * 100)}%`;
+  // 速度條的內容文字更新
+  bar.textContent = `${playSpeed}X`;
 }
 
 speed.addEventListener("mousemove", handleMove);
