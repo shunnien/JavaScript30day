@@ -21,6 +21,8 @@ function handleMove(e) {
   bar.style.height = `${Math.round(mousePercent * 100)}%`;
   // 速度條的內容文字更新
   bar.textContent = `${playSpeed.toFixed(2)}X`;
+  // 調整播放速度
+  video.playbackRate = playSpeed;
 }
 
 speed.addEventListener("mousemove", handleMove);
