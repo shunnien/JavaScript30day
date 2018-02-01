@@ -14,7 +14,7 @@ function handleMove(e) {
   const mousePercent = mousePoint / this.offsetHeight;
 
   // 速度條的樣式
-  bar.style.height = `${mousePercent * 100}%`;
+  bar.style.height = `${Math.round(mousePercent * 100)}%`;
 }
 
 speed.addEventListener("mousemove", handleMove);
