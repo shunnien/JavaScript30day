@@ -12,6 +12,8 @@ function handleMove(e) {
   const mousePoint = e.pageY - this.offsetTop;
   // 計算移動的速度條百分比
   const mousePercent = mousePoint / this.offsetHeight;
+  // 速度條的最小倍速與最大倍速
+  const min = 0.4, max = 4;
 
   // 速度條的樣式
   bar.style.height = `${Math.round(mousePercent * 100)}%`;
