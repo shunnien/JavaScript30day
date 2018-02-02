@@ -50,7 +50,7 @@ function startTimer() {
  * @param {*} seconds
  */
 function timer(seconds) {
-
+  // 先清除其他計時器，避免相互影響
   clearInterval(countdown);
   // 計算倒數計時完成的時刻(使用毫秒)
   const then = Date.now() + seconds * 1000;
@@ -60,6 +60,13 @@ function timer(seconds) {
   displayEndTime(then);
 
   countdown = setInterval(() => {
+    // 每秒鐘執行，所以直接每次減 1 就好
+    seconds--;
+    // 小於 0 時，清除計時器
+    if (seconds < 0) {
+      clearInterval(countdown);
+      return;
+    }
     displayTimeLeft(seconds);
   }, 1000);
 }
