@@ -35,10 +35,19 @@ function displayEndTime(timestamp) {
 }
 
 /**
- * 
- * @param {any} params 
+ * 按鈕事件，啟動計時器
  */
-function startTimer(params) {
+function startTimer() {
+    // dataset 轉換數值
+    const seconds = parseInt(this.dataset.time);
+    timer(seconds);
+}
+
+/**
+ * 倒數計時器
+ * @param {*} seconds 
+ */
+function timer(seconds) {
     
 }
 
