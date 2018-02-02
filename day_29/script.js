@@ -22,3 +22,11 @@ function displayTimeLeft(seconds) {
   // 顯示倒數計時
   timerDisplay.textContent = display;
 }
+
+/**
+ * 顯示結束時刻
+ * @param {*} params 
+ */
+function displayEndTime(params) {
+    
+}
