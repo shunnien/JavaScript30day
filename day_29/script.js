@@ -18,7 +18,10 @@ function displayTimeLeft(seconds) {
   // 計算剩餘秒數
   const remainderSeconds = seconds % 60;
   // 組合顯示文字(剩餘時間)
-  const display = `${minutes}:${remainderSeconds}`;
+  const display = `${paddingLeft(minutes.toString(), 2)}:${paddingLeft(
+    remainderSeconds.toString(),
+    2
+  )}`;
   // 變更網頁標題
   document.title = display;
   // 顯示倒數計時
@@ -32,8 +35,14 @@ function displayTimeLeft(seconds) {
 function displayEndTime(timestamp) {
   // 轉換為時間
   const end = new Date(timestamp);
+  const hour = end.getHours().toString();
+  const minute = end.getMinutes().toString();
+  const second = end.getSeconds().toString();
   // 顯示結束時間
-  endTime.textContent = `Be Back At ${end.getHours()}:${end.getMinutes()}:${end.getSeconds()}`;
+  endTime.textContent = `Be Back At ${paddingLeft(hour, 2)}:${paddingLeft(
+    minute,
+    2
+  )}:${paddingLeft(second, 2)}`;
 }
 
 /**
@@ -71,13 +80,32 @@ function timer(seconds) {
   }, 1000);
 }
 
+/**
+ * 文字在指定長度中左邊補 0
+ * @param {*} str 輸入文字
+ * @param {*} lenght 補 0 的長度
+ */
+function paddingLeft(str, lenght) {
+  if (str.length >= lenght) return str;
+  else return paddingLeft("0" + str, lenght);
+}
+/**
+ * 文字在指定長度中右邊邊補 0
+ * @param {*} str 
+ * @param {*} lenght 
+ */
+function paddingRight(str, lenght) {
+  if (str.length >= lenght) return str;
+  else return paddingRight(str + "0", lenght);
+}
+
 buttons.forEach(button => button.addEventListener("click", startTimer));
 
-document.customForm.addEventListener('submit', function (e) {
-    // 取消事件
-    e.preventDefault();
-    const mins = this.minutes.value;
-    timer(mins * 60);
-    // 表單清單
-    this.reset();
+document.customForm.addEventListener("submit", function(e) {
+  // 取消事件
+  e.preventDefault();
+  const mins = this.minutes.value;
+  timer(mins * 60);
+  // 表單清單
+  this.reset();
 });
