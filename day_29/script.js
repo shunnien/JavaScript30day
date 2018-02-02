@@ -28,5 +28,8 @@ function displayTimeLeft(seconds) {
  * @param {*} timestamp 
  */
 function displayEndTime(timestamp) {
+    // 轉換為時間
     const end = new Date(timestamp);
+    // 顯示結束時間
+    endTime.textContent = `Be Back At ${end.getHours()}:${end.getMinutes()}:${end.getSeconds()}`;
 }
