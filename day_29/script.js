@@ -33,3 +33,13 @@ function displayEndTime(timestamp) {
     // 顯示結束時間
     endTime.textContent = `Be Back At ${end.getHours()}:${end.getMinutes()}:${end.getSeconds()}`;
 }
+
+/**
+ * 
+ * @param {any} params 
+ */
+function startTimer(params) {
+    
+}
+
+buttons.forEach(button => button.addEventListener('click', startTimer));
