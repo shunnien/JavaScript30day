@@ -8,8 +8,8 @@ const endTime = document.querySelector(".display__end-time");
 
 /**
  * 顯示倒數計時
- * @param {*} params 
+ * @param {*} seconds 秒數 
  */
-function displayTimeLeft(params) {
+function displayTimeLeft(seconds) {
     
 }
