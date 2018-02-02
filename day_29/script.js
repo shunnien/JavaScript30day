@@ -15,4 +15,10 @@ function displayTimeLeft(seconds) {
   const minutes = Math.floor(seconds / 60);
   // 計算剩餘秒數
   const remainderSeconds = seconds % 60;
+  // 組合顯示文字(剩餘時間)
+  const display = `${minutes}:${remainderSeconds}`;
+  // 變更網頁標題
+  document.title = display;
+  // 顯示倒數計時
+  timerDisplay.textContent = display;
 }
