@@ -25,8 +25,8 @@ function displayTimeLeft(seconds) {
 
 /**
  * 顯示結束時刻
- * @param {*} params 
+ * @param {*} timestamp 
  */
-function displayEndTime(params) {
-    
+function displayEndTime(timestamp) {
+    const end = new Date(timestamp);
 }
