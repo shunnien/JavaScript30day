@@ -72,3 +72,12 @@ function timer(seconds) {
 }
 
 buttons.forEach(button => button.addEventListener("click", startTimer));
+
+document.customForm.addEventListener('submit', function (e) {
+    // 取消事件
+    e.preventDefault();
+    const mins = this.minutes.value;
+    timer(mins * 60);
+    // 表單清單
+    this.reset();
+});
