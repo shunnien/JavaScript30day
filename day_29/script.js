@@ -25,30 +25,35 @@ function displayTimeLeft(seconds) {
 
 /**
  * 顯示結束時刻
- * @param {*} timestamp 
+ * @param {*} timestamp
  */
 function displayEndTime(timestamp) {
-    // 轉換為時間
-    const end = new Date(timestamp);
-    // 顯示結束時間
-    endTime.textContent = `Be Back At ${end.getHours()}:${end.getMinutes()}:${end.getSeconds()}`;
+  // 轉換為時間
+  const end = new Date(timestamp);
+  // 顯示結束時間
+  endTime.textContent = `Be Back At ${end.getHours()}:${end.getMinutes()}:${end.getSeconds()}`;
 }
 
 /**
  * 按鈕事件，啟動計時器
  */
 function startTimer() {
-    // dataset 轉換數值
-    const seconds = parseInt(this.dataset.time);
-    timer(seconds);
+  // dataset 轉換數值
+  const seconds = parseInt(this.dataset.time);
+  timer(seconds);
 }
 
 /**
  * 倒數計時器
- * @param {*} seconds 
+ * @param {*} seconds
  */
 function timer(seconds) {
-    
+  // 計算倒數計時完成的時刻(使用毫秒)
+  const then = Date.now() + seconds * 1000;
+  // 顯示倒數計時
+  displayTimeLeft(seconds);
+  // 顯示完成時刻
+  displayEndTime(then);
 }
 
-buttons.forEach(button => button.addEventListener('click', startTimer));
+buttons.forEach(button => button.addEventListener("click", startTimer));
