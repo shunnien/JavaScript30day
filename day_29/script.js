@@ -5,3 +5,11 @@ const buttons = document.querySelectorAll("[data-time]");
 const timerDisplay = document.querySelector(".display__time-left");
 // 結束時間的顯示元素
 const endTime = document.querySelector(".display__end-time");
+
+/**
+ * 顯示倒數計時
+ * @param {*} params 
+ */
+function displayTimeLeft(params) {
+    
+}
