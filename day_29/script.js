@@ -5,6 +5,8 @@ const buttons = document.querySelectorAll("[data-time]");
 const timerDisplay = document.querySelector(".display__time-left");
 // 結束時間的顯示元素
 const endTime = document.querySelector(".display__end-time");
+// 建立計時器
+let countdown;
 
 /**
  * 顯示倒數計時
@@ -48,12 +50,18 @@ function startTimer() {
  * @param {*} seconds
  */
 function timer(seconds) {
+
+  clearInterval(countdown);
   // 計算倒數計時完成的時刻(使用毫秒)
   const then = Date.now() + seconds * 1000;
   // 顯示倒數計時
   displayTimeLeft(seconds);
   // 顯示完成時刻
   displayEndTime(then);
+
+  countdown = setInterval(() => {
+    displayTimeLeft(seconds);
+  }, 1000);
 }
 
 buttons.forEach(button => button.addEventListener("click", startTimer));
