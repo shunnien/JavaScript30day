@@ -42,5 +42,6 @@ function peep() {
   // 地鼠出現的時間
   setTimeout(() => {
     hole.classList.remove('up');
+    peep();
   }, time);
 }
