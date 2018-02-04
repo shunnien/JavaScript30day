@@ -14,7 +14,7 @@ function randomTime(min, max) {
 
 /**
  * 隨機出現地鼠的地洞
- * @param {*} holes 
+ * @param {*} holes
  */
 function randomHole(holes) {
   // holes 是陣列，由 0 開始，所以利用 random 直接設定 random 範圍
@@ -22,9 +22,15 @@ function randomHole(holes) {
   const hole = holes[idx];
   // 隨機有可能重複的地洞，所以建立變數排除重複
   if (hole === lastHole) {
-    console.log('Ah nah thats the same one bud');
+    console.log("Ah nah thats the same one bud");
     return randomHole(holes);
   }
   lastHole = hole;
   return hole;
+}
+
+/**
+ * 地鼠出現
+ */
+function peep() {
 }
