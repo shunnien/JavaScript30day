@@ -40,11 +40,25 @@ function peep() {
   // 地鼠出現的隨機地洞
   const hole = randomHole(holes);
   // 變更該地洞的地鼠樣式，讓其顯示
-  hole.classList.add('up');
+  hole.classList.add("up");
   // 地鼠出現的時間
   setTimeout(() => {
-    hole.classList.remove('up');
+    hole.classList.remove("up");
     // 讓地鼠出現連續，遊戲時間到則停止
     if (!timeUp) peep();
   }, time);
+}
+
+/**
+ * 遊戲開始
+ */
+function startGame() {
+  // 分數版歸 0
+  scoreBoard.textContent = 0;
+  // 遊戲時間標示
+  timeUp = false;
+  // 地鼠開始出現
+  peep();
+  // 遊戲截止時間
+  setTimeout(() => (timeUp = true), 10000);
 }
