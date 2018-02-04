@@ -1,7 +1,8 @@
 const holes = document.querySelectorAll(".hole");
 const scoreBoard = document.querySelector(".score");
 const moles = document.querySelectorAll(".mole");
-
+// 紀錄上次隨機的地洞
+let lastHole;
 /**
  * 地鼠出現的時間
  * @param {*} min
@@ -19,4 +20,10 @@ function randomHole(holes) {
   // holes 是陣列，由 0 開始，所以利用 random 直接設定 random 範圍
   const idx = Math.floor(Math.random() * holes.length);
   const hole = holes[idx];
+  // 隨機有可能重複的地洞，所以建立變數排除重複
+  if (hole === lastHole) {
+    console.log('Ah nah thats the same one bud');
+    return randomHole(holes);
+  }
+  lastHole = hole;
 }
