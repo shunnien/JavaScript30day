@@ -74,7 +74,10 @@ function startGame() {
 function bonk(e) {
     // 判斷是否真的使用滑鼠點擊
     if(!e.isTrusted) return; // cheater!
+    // 分數 + 1
     score++;
+    // 移除地鼠顯示
     this.parentNode.classList.remove('up');
+    // 顯示得分
     scoreBoard.textContent = score;
   }
