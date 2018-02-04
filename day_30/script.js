@@ -59,6 +59,8 @@ function startGame() {
   scoreBoard.textContent = 0;
   // 遊戲時間標示
   timeUp = false;
+  // 遊戲得分歸 0
+  score = 0;
   // 地鼠開始出現
   peep();
   // 遊戲截止時間
