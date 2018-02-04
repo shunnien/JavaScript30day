@@ -3,6 +3,8 @@ const scoreBoard = document.querySelector(".score");
 const moles = document.querySelectorAll(".mole");
 // 紀錄上次隨機的地洞
 let lastHole;
+// 遊戲時間是否已經到達
+let timeUp = false;
 /**
  * 地鼠出現的時間
  * @param {*} min
@@ -42,6 +44,7 @@ function peep() {
   // 地鼠出現的時間
   setTimeout(() => {
     hole.classList.remove('up');
-    peep();
+    // 讓地鼠出現連續，遊戲時間到則停止
+    if (!timeUp) peep();
   }, time);
 }
