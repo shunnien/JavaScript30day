@@ -5,6 +5,8 @@ const moles = document.querySelectorAll(".mole");
 let lastHole;
 // 遊戲時間是否已經到達
 let timeUp = false;
+// 遊戲得分
+let score = 0;
 /**
  * 地鼠出現的時間
  * @param {*} min
@@ -70,4 +72,7 @@ function startGame() {
 function bonk(e) {
     // 判斷是否真的使用滑鼠點擊
     if(!e.isTrusted) return; // cheater!
+    score++;
+    this.parentNode.classList.remove('up');
+    scoreBoard.textContent = score;
   }
