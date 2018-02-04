@@ -33,4 +33,7 @@ function randomHole(holes) {
  * 地鼠出現
  */
 function peep() {
+  // 地鼠出現的隨機時間
+  const time = randomTime(200, 1000);
+  
 }
