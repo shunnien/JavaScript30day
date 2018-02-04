@@ -26,4 +26,5 @@ function randomHole(holes) {
     return randomHole(holes);
   }
   lastHole = hole;
+  return hole;
 }
