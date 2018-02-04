@@ -39,5 +39,8 @@ function peep() {
   const hole = randomHole(holes);
   // 變更該地洞的地鼠樣式，讓其顯示
   hole.classList.add('up');
-
+  // 地鼠出現的時間
+  setTimeout(() => {
+    hole.classList.remove('up');
+  }, time);
 }
