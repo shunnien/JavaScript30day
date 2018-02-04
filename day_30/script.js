@@ -62,3 +62,12 @@ function startGame() {
   // 遊戲截止時間
   setTimeout(() => (timeUp = true), 10000);
 }
+
+/**
+ * 打擊地鼠後得分
+ * @param {*} e 
+ */
+function bonk(e) {
+    // 判斷是否真的使用滑鼠點擊
+    if(!e.isTrusted) return; // cheater!
+  }
