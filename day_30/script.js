@@ -7,6 +7,11 @@ let lastHole;
 let timeUp = false;
 // 遊戲得分
 let score = 0;
+// 倒數計時的顯示元素
+const timerDisplay = document.querySelector(".controllPanel span");
+// 建立計時器
+let countdown;
+
 /**
  * 地鼠出現的時間
  * @param {*} min
