@@ -72,6 +72,8 @@ h1 {
 /* 控制按鈕 */
 .controllPanel{
   text-align: center;
+  font-size: 5em;
+  font-weight: bold;
 }
 .controllPanel button{
   background-color: rgb(127, 236, 255);
