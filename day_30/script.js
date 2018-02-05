@@ -69,7 +69,8 @@ function startGame() {
   // 地鼠開始出現
   peep();
   // 遊戲截止時間
-  setTimeout(() => (timeUp = true), 10000);
+  setTimeout(() => (timeUp = true), 30000);
+  timer(30);
 }
 
 /**
@@ -85,6 +86,55 @@ function bonk(e) {
   this.parentNode.classList.remove("up");
   // 顯示得分
   scoreBoard.textContent = score;
+}
+
+/**
+ * 倒數計時器
+ * @param {*} seconds
+ */
+function timer(seconds) {
+  // 先清除其他計時器，避免相互影響
+  clearInterval(countdown);
+  // 顯示倒數計時
+  displayTimeLeft(seconds);
+
+  countdown = setInterval(() => {
+    // 每秒鐘執行，所以直接每次減 1 就好
+    seconds--;
+    // 小於 0 時，清除計時器
+    if (seconds < 0) {
+      clearInterval(countdown);
+      return;
+    }
+    displayTimeLeft(seconds);
+  }, 1000);
+}
+
+/**
+ * 顯示倒數計時
+ * @param {*} seconds 秒數
+ */
+function displayTimeLeft(seconds) {
+  // 計算幾分鐘
+  const minutes = Math.floor(seconds / 60);
+  // 計算剩餘秒數
+  const remainderSeconds = seconds % 60;
+  // 組合顯示文字(剩餘時間)
+  const display = `${paddingLeft(minutes.toString(), 2)}:${paddingLeft(
+    remainderSeconds.toString(),
+    2
+  )}`;
+  // 顯示倒數計時
+  timerDisplay.textContent = display;
+}
+/**
+ * 文字在指定長度中左邊補 0
+ * @param {*} str 輸入文字
+ * @param {*} lenght 補 0 的長度
+ */
+function paddingLeft(str, lenght) {
+  if (str.length >= lenght) return str;
+  else return paddingLeft("0" + str, lenght);
 }
 
 moles.forEach(mole => mole.addEventListener('click', bonk));
