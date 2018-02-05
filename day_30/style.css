@@ -67,3 +67,14 @@ h1 {
 .hole.up .mole {
   top:0;
 }
+
+/* 控制按鈕 */
+.controllPanel{
+  text-align: center;
+}
+.controllPanel button{
+  background-color: rgb(127, 236, 255);
+  font-size: 24px;
+  font-weight: 150;
+  padding: 5px;
+}
