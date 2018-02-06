@@ -1,0 +1,23 @@
+{
+  "name": "javascript30day",
+  "version": "1.0.0",
+  "description": "- [JavaScript 30 day](https://javascript30.com/)\r - 作者 Github [Wes Bos](https://github.com/wesbos)\r - [Js 30 day 中文指南](https://github.com/soyaine/JavaScript30)\r - [瓜瓜的 JS 30](https://github.com/guahsu/JavaScript30)",
+  "main": "script.js",
+  "scripts": {
+    "start": "browser-sync start --directory --server --files \"*.css, *.html, *.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shunnien/JavaScript30day.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shunnien/JavaScript30day/issues"
+  },
+  "homepage": "https://github.com/shunnien/JavaScript30day#readme",
+  "dependencies": {
+    "browser-sync": "^2.23.6"
+  }
+}
