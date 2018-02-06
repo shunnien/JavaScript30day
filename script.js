@@ -24,8 +24,9 @@ function createView() {
       data.title
     }</h2>
                   <div class="course__desc">${data.desc}</div>
+                  <a class="course__btn" href="${blogUrl}JavaScript30day/${data.github}" target="_blank" >Demo</a>
                   <a class="course__btn" href="${blogUrl +
-                    data.blog}" target="_blank" >Blog</a>
+                    data.blog}" target="_blank" >筆記</a>
                   <a class="course__btn" href="${githubUrl +
                     data.github}" target="_blank">Source Code</a>
                 </div>
